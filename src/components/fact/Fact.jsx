@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function Quote(quote) {
+function Quote({ fact }) {
   return (
     <div>
-      {quote}
+      {fact}
     </div>
   )
 }
 
 Quote.propTypes = {
-  quote: PropTypes.string.isRequired
+  fact: PropTypes.string.isRequired
 }
 
 export default Quote
