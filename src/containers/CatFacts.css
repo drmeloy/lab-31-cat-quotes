@@ -1,0 +1,25 @@
+button {
+  height: 125px;
+  width: 300px;
+  position: relative;
+  left: 41vw;
+  margin: 85px;
+  font-size: 2rem;
+  background: indianred;
+  border: 2px solid;
+  border-radius: 25px;
+  box-shadow: 12px 2px 58px 4px rgba(0,0,0,0.32);
+  font-family: 'Nunito', sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #620c0c;
+  color: white;
+}
+
+button:active {
+  cursor: pointer;
+  background: #00048b;
+  color: white;
+}

@@ -1,0 +1,11 @@
+header {
+  border: 2px solid darkred;
+  height: 8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: darkred;
+  background: lightgoldenrodyellow;
+  font-family: 'Montserrat', sans-serif;
+}

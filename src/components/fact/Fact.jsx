@@ -1,9 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Fact.css';
 
 function Quote({ fact }) {
   return (
-    <div>
+    <div className={styles.Fact}>
       {fact}
     </div>
   )

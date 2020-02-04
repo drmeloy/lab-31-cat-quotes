@@ -3,6 +3,7 @@ import Header from '../components/header/Header.jsx'
 import Fact from '../components/fact/Fact.jsx'
 import Footer from '../components/footer/Footer.jsx'
 import { getFact } from '../services/catFactApi.js';
+import styles from './CatFacts.css';
 
 const CatFacts = () => {
   const [fact, setFact] = useState('');
@@ -20,7 +21,7 @@ const CatFacts = () => {
   return (
     <>
       <Header />
-      <button onClick={changeFact}>Get new fact!</button>
+      <button styleName={styles.button} onClick={changeFact}>Get new fact!</button>
       <Fact fact={fact}/>
       <Footer />
     </>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme';
 import CatFacts from './CatFacts.jsx';
-import { getFact } from '../services/catFactApi.js';
 
 jest.mock('../services/catFactApi.js');
 
