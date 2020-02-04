@@ -1,22 +1,19 @@
 import React from 'react'
 import { shallow } from 'enzyme';
 import CatFacts from './CatFacts.jsx';
-import Fact from '../components/fact/Fact.jsx';
 import { getFact } from '../services/catFactApi.js';
 
 jest.mock('../services/catFactApi.js');
 
 describe('CatFacts container', () => {
-  it('can change the fact on click', (done) => {
+  it('can change fact state', () => {
     const wrapper = shallow(<CatFacts />);
-    const button = wrapper.find('button');
-    button.simulate('click');
+    const catFacts = wrapper.instance();
 
-    expect(getFact).toHaveBeenCalled();
+    return catFacts.changeFact()
+      .then(() => {
+        expect(wrapper.state('fact')).toEqual('Cats are friends, not food.');
+      });
 
-    setTimeout(() => {
-      expect(wrapper.find(Fact).prop('fact')).toEqual('Cats are friends, not food.');
-      done();
-    }, 0)
   });
 });
