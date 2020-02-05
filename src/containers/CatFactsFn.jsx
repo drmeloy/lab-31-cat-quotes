@@ -2,27 +2,22 @@ import React, { useState, useEffect } from 'react'
 import Header from '../components/header/Header.jsx'
 import Fact from '../components/fact/Fact.jsx'
 import Footer from '../components/footer/Footer.jsx'
-import { getFact } from '../services/catFactApi.js';
 import styles from './CatFacts.css';
+import Buttons from '../components/buttons/Buttons.jsx';
+import { useFacts } from '../hooks/facts.js';
 
 const CatFacts = () => {
-  const [fact, setFact] = useState('');
+  const { factList, setNumOfFacts, setSearchTerm } = useFacts();
 
-  useEffect(() => {
-    getFact()
-      .then(fact => setFact(fact));
-  }, []);
-
-  const changeFact = () => {
-    getFact()
-      .then(fact => setFact(fact));
-  }
+  const factListDisplay = factList.map((fact) => (
+    <Fact key={fact} fact={fact}></Fact>
+  ));
 
   return (
     <>
       <Header />
-      <button styleName={styles.button} onClick={changeFact}>Get new fact!</button>
-      <Fact fact={fact}/>
+      <Buttons setNumOfFacts={setNumOfFacts} setSearchTerm={setSearchTerm} />
+      {factListDisplay}
       <Footer />
     </>
   )
