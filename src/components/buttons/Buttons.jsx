@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import QuantitySelector from './QuantitySelector.jsx';
 import FactSearch from './FactSearch.jsx';
 import NewFactButton from './NewFactButton.jsx';
-import { getFact } from '../../services/catFactApi';
+import { onClick } from '../../hooks/facts.js';
 
-const Buttons = ({ setNumOfFacts, setSearchTerm }) => {
+const Buttons = ({ setNumOfFacts, setSearchTerm, onClick }) => {
   const changeNumber = (({ target }) => {
     setNumOfFacts(target.value);
   });
@@ -17,7 +17,7 @@ const Buttons = ({ setNumOfFacts, setSearchTerm }) => {
     <>
       <QuantitySelector changeNumber={changeNumber} />
       <FactSearch changeTerm={changeTerm} />
-      <NewFactButton />
+      <NewFactButton onClick={onClick} />
     </>
   );
 }
