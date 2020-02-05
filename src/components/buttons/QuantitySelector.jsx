@@ -1,7 +1,7 @@
 import React from 'react';
 
-const QuantitySelector = ({ changeNumber }) => (
-  <input type='number' onChange={changeNumber} />
+const QuantitySelector = ({ numOfFacts, changeNumber }) => (
+  <input type='number' value={numOfFacts} onChange={changeNumber} />
 );
 
 export default QuantitySelector;

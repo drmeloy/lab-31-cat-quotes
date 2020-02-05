@@ -4,7 +4,7 @@ import FactSearch from './FactSearch.jsx';
 import NewFactButton from './NewFactButton.jsx';
 import styles from './Buttons.css';
 
-const Buttons = ({ setNumOfFacts, setSearchTerm, onClick }) => {
+const Buttons = ({ numOfFacts, setNumOfFacts, setSearchTerm, onClick }) => {
   const changeNumber = (({ target }) => {
     setNumOfFacts(target.value);
   });
@@ -16,7 +16,7 @@ const Buttons = ({ setNumOfFacts, setSearchTerm, onClick }) => {
   return (
     <div className={styles.Buttons}>
       <p>How many awesome cat facts do you want to see?</p>
-      <QuantitySelector changeNumber={changeNumber} />
+      <QuantitySelector numOfFacts={numOfFacts} changeNumber={changeNumber} />
       <p>Optional search term. For example, try 'Egypt'!</p>
       <FactSearch changeTerm={changeTerm} />
       <NewFactButton onClick={onClick} />

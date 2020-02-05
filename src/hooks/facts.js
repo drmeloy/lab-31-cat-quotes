@@ -10,13 +10,17 @@ export const useFacts = () => {
     getFacts()
       .then(facts => {
         const matches = facts.filter(fact => fact.text.includes(searchTerm)).map(fact => fact.text);
+        
         const numOfMatches = [];
-        for(let i = 0; i < numOfFacts; i++){
-          numOfMatches.push(matches[Math.floor(Math.random() * matches.length)]);
+        if(numOfFacts >= matches.length) setFactList(matches);
+        else {
+          for(let i = 0; i < numOfFacts; i++){
+            numOfMatches.push(matches.splice(([Math.floor(Math.random() * matches.length)]), 1)[0]);
+          }
+          setFactList(numOfMatches);
         }
-        setFactList(numOfMatches);
       })
   }
 
-  return { factList, setNumOfFacts, setSearchTerm, onClick };
+  return { factList, numOfFacts, setNumOfFacts, setSearchTerm, onClick };
 }

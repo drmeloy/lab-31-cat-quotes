@@ -6,7 +6,7 @@ import Buttons from '../components/buttons/Buttons.jsx';
 import { useFacts } from '../hooks/facts.js';
 
 const CatFacts = () => {
-  const { factList, setNumOfFacts, setSearchTerm, onClick } = useFacts();
+  const { factList, numOfFacts, setNumOfFacts, setSearchTerm, onClick } = useFacts();
 
   const factListDisplay = factList.map((fact) => (
       <Fact key={fact} fact={fact}></Fact>
@@ -15,7 +15,7 @@ const CatFacts = () => {
   return (
     <>
       <Header />
-      <Buttons setNumOfFacts={setNumOfFacts} setSearchTerm={setSearchTerm} onClick={onClick} />
+      <Buttons numOfFacts={numOfFacts} setNumOfFacts={setNumOfFacts} setSearchTerm={setSearchTerm} onClick={onClick} />
       {factListDisplay}
       <Footer />
     </>
