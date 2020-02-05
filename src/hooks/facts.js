@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { getFacts } from '../services/catFactApi.js';
-import Fact from '../components/fact/Fact.jsx';
 
 export const useFacts = () => {
   const [factList, setFactList] = useState([]);

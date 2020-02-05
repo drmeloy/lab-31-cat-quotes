@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Header from '../components/header/Header.jsx'
 import Fact from '../components/fact/Fact.jsx'
 import Footer from '../components/footer/Footer.jsx'
-import styles from './CatFacts.css';
 import Buttons from '../components/buttons/Buttons.jsx';
 import { useFacts } from '../hooks/facts.js';
 

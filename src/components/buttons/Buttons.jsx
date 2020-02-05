@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import QuantitySelector from './QuantitySelector.jsx';
 import FactSearch from './FactSearch.jsx';
 import NewFactButton from './NewFactButton.jsx';
-import { onClick } from '../../hooks/facts.js';
+import styles from './Buttons.css';
 
 const Buttons = ({ setNumOfFacts, setSearchTerm, onClick }) => {
   const changeNumber = (({ target }) => {
@@ -14,11 +14,13 @@ const Buttons = ({ setNumOfFacts, setSearchTerm, onClick }) => {
   })
 
   return (
-    <>
+    <div className={styles.Buttons}>
+      <p>How many awesome cat facts do you want to see?</p>
       <QuantitySelector changeNumber={changeNumber} />
+      <p>Optional search term. For example, try 'Egypt'!</p>
       <FactSearch changeTerm={changeTerm} />
       <NewFactButton onClick={onClick} />
-    </>
+    </div>
   );
 }
 

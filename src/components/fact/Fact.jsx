@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Fact.css';
-import { useGetFact } from '../../hooks/facts';
 
 function Quote({ fact }) {
   return (
